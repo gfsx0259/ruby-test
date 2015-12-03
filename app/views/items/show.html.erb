@@ -1,0 +1,10 @@
+<p>Сведения о товаре</p>
+<h1><%=@item.name%></h1>
+
+<ul>
+  <li><%= @item.price %>руб.</li>
+  <li><%= @item.description %></li>
+  <li>Вес: <%= @item.weight %> кг.</li>
+</ul>
+<%= link_to 'Редактировать', edit_item_path(@item) %>
+<a><%= link_to 'Назад', items_path %></a>

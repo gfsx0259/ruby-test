@@ -1,0 +1,16 @@
+<%= flash[:status] %>
+<%= form_tag("/auth/reg", method: "post") do %>
+    <div>
+        <%= label_tag(:email, "Login:") %>
+        <%= text_field_tag(:email) %>
+    </div>
+    <div>
+        <%= label_tag(:password, "Password:") %>
+        <%= text_field_tag(:password) %>
+    </div>
+    <div>
+        <%= label_tag(:name, "Name:") %>
+        <%= text_field_tag(:name) %>
+    </div>
+    <%= submit_tag("Register") %>
+<% end %>

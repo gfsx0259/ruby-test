@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+
+
+  get 'sessions/new'
+
+  #get 'users/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -53,4 +59,22 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :users
+  resources :items do
+    get :upvote, on: :member
+  end
+  get    'signup' => 'users#new', as: 'signup'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
+  # get 'items' => 'items#index', as: 'items'
+  # get 'items/:id(.:format)' => 'item#show'
+
+  #   get 'auth/reg' => 'auth#reg', as: 'reg'
+  #  post 'auth/reg' => 'auth#do_reg', as: 'do_reg'
+
+  # get 'auth/login' => 'auth#login', as: 'login'
+  #post 'auth/do_login' => 'auth#do_login', as: 'do_login'
 end

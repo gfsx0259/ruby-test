@@ -1,0 +1,12 @@
+<h1>Create new item</h1>
+
+<%= form_for @item do |f| %>
+    <%= render 'shared/error_messages', :model => @item %>
+    <p><div>Цена: </div><%= f.text_field :price %></p>
+    <p><div>Название: </div><%= f.text_field :name %></p>
+    <p><div>Описание: </div><%= f.text_field :description %></p>
+    <p><div>Вес: </div><%= f.text_field :weight %></p>
+    <p>
+      <%= f.submit "Создать товар" %>
+    </p>
+<% end %>

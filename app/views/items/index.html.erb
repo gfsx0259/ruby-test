@@ -1,0 +1,31 @@
+<h1>Items list</h1>
+<% if @items.empty? %>
+    <b>No items in store</b>
+<% else %>
+    <table class="table">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% @items.each do |i| %>
+          <tr>
+            <td><%= i.id %></td>
+            <td><%= link_to i.name, item_path(i) %></td>
+
+            <td><%= i.price %> руб.</td>
+            <td><%= link_to 'Редактировать', edit_item_path(i) %></td>
+            <td><%= link_to "Удалить", i, method: :delete,data: {confirm:"Вы дейвствительно хотите удалить товар?"} %></td>
+            <td>Рейтинг: <%= i.votes_count %>,<%= link_to "+",upvote_item_path(i) %></td>
+          </tr>
+      <% end %>
+    </table>
+    <%= will_paginate @items %>
+
+<% end %>
+
+<p><%= link_to 'Добавить', new_item_path %></p>
