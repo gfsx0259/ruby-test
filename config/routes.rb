@@ -68,6 +68,8 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get    'cart/add/:id/(:qty)' => 'cart#add', as: 'cart_add'
+  delete 'card/delete/:id' => 'cart#remove', as: 'cart_remove'
 
   # get 'items' => 'items#index', as: 'items'
   # get 'items/:id(.:format)' => 'item#show'
