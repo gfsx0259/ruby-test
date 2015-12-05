@@ -10,13 +10,13 @@ class CartController < ApplicationController
     else
       Position.create( cart_id: @cart.id, item_id: params[:id],quantity:params[:qty].to_i)
     end
-  redirect_to root_path
+  redirect_to :back
   end
 
   def remove
    if params.key?(:id)
      Position.find_by_id(params[:id]).destroy
    end
-   redirect_to root_path
+   redirect_to :back
   end
 end

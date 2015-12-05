@@ -56,3 +56,23 @@ input {
   }
 }
 
+.item-cart{
+  min-width: 250px;
+}
+
+.item-cart img{
+  padding: 5px;
+}
+
+.item-cart .item > div,.item-cart .item-left > *{
+  display: inline-block;
+}
+
+.item-cart .item-info small{
+  padding:0 2px;
+}
+
+.item-cart .item-right{
+  float: right;
+  margin:10px;
+}
