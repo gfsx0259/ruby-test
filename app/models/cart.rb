@@ -10,4 +10,8 @@ class Cart < ActiveRecord::Base
   def quantity item
     self.positions.find_by_item_id(item.id).quantity
   end
+
+  def has_items
+    !self.items.blank?
+  end
 end
