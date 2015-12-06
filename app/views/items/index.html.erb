@@ -5,6 +5,7 @@
     <table class="table">
       <tr>
         <th>Id</th>
+        <th>Image</th>
         <th>Name</th>
         <th>Price</th>
         <th></th>
@@ -15,6 +16,11 @@
       <% @items.each do |i| %>
           <tr>
             <td><%= i.id %></td>
+            <% if i.attachment_url :thumb %>
+               <td><%= image_tag i.attachment_url :thumb %></td>
+            <% else %>
+                <td><%= image_tag 'no-image.jpg', width: 60 %></td>
+            <% end %>
             <td><%= link_to i.name, item_path(i) %></td>
 
             <td><%= i.price %> руб.</td>

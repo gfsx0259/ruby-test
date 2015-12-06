@@ -6,6 +6,8 @@
     <p><div>Название: </div><%= f.text_field :name %></p>
     <p><div>Описание: </div><%= f.text_field :description %></p>
     <p><div>Вес: </div><%= f.text_field :weight %></p>
+    <p><%= f.label :attachment %></p>
+    <p><%= f.file_field :attachment %></p>
     <p>
       <%= f.submit "Создать товар" %>
     </p>

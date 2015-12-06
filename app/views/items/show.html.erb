@@ -5,6 +5,7 @@
   <li><%= @item.price %>руб.</li>
   <li><%= @item.description %></li>
   <li>Вес: <%= @item.weight %> кг.</li>
+  <li><%= image_tag @item.attachment_url :small if @item.attachment_url :small %></li>
 </ul>
 
 <%= link_to 'Добавить в корзину', cart_add_path(@item) %>

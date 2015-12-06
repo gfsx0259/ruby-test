@@ -10,7 +10,11 @@
               <li>
                 <div class="item">
                   <div class="item-left">
-                    <img src="http://lorempixel.com/50/50/" />
+                    <% if item.attachment_url :thumb %>
+                        <%= image_tag item.attachment_url :thumb %>
+                    <% else %>
+                        <%= image_tag 'no-image.jpg', width: 60 %>
+                    <% end %>
                     <div class="item-info">
                       <div class="name"><%= link_to truncate_title(item.name), item_path(item) %></div>
                       <div class="price"><%=@cart.quantity(item) %><small>x</small><%=item.price %>$</div>
