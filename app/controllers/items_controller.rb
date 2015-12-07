@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @items = Item.paginate(:page => params[:page], :per_page => 2)
+    @items = Item.paginate(:page => params[:page], :per_page => 5)
   end
 
   #/items/1 GET
