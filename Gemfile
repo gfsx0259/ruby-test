@@ -54,3 +54,4 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'bcrypt'
 gem 'rmagick'
 gem 'carrierwave'
+gem "carrierwave-aws"
